@@ -1,0 +1,71 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #333;
+}
+
+#alex-backyard .game-title {
+    color: #e74c3c;
+}
+
+#alex-backyard {
+    background: #333;
+}
+
+#alex-backyard #game {
+    width: 432;
+    height: 576;
+    /* height: 680;  */
+    margin: 0 auto;
+    border: 1px solid #000;
+    background: url("../assets/PNG/Background/Background_1.png");
+    background-size: contain;
+    border-radius: 10px;
+    padding: 52px 0;
+}
+
+#alex-backyard #game .grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    columns: 3;
+    column-gap: 0;
+}
+
+#alex-backyard #game .grid .slot {
+    /* border: 1px dashed red; */
+    height: 144px;
+    background: url("../assets/PNG/Sprites/Miscellaneous/_holes.png");
+}
+
+#alex-backyard #game .grid .slot .mole {
+    height: 144px;
+    width: 144px;
+    background-position: 0px 0px;
+    background: none;
+    animation: none;
+    display: none;
+}
+#alex-backyard #game .grid .slot .mole.idle {
+    background: url("../assets/PNG/Sprites/Miscellaneous/_mole.png");
+    background-position: 144px 0px;
+    display: block;
+}
+#alex-backyard #game .grid .slot .mole.active {
+    background: url("../assets/PNG/Sprites/Miscellaneous/_mole.png");
+    animation: playMole 0.8s steps(4) forwards;
+    animation-direction: initial;
+    display: block;
+}
+#alex-backyard #game .grid .slot .mole.inactive {
+    background: url("../assets/PNG/Sprites/Miscellaneous/_mole.png");
+    animation: playMole 0.8s steps(4);
+    animation-direction: reverse;
+    display: block;
+}
+
+@keyframes playMole {
+    100% {
+        background-position: -576px 0px;
+    }
+}
